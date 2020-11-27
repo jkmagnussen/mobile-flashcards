@@ -1,7 +1,7 @@
 <p align="center"><img width="192" src="https://raw.githubusercontent.com/cangir/mobile-flashcards/master/assets/icon.png" alt="Mobile Flashcards Udacity">
 </p>
 
-<h1 align="center">Mobile Flashcards React Native</h1>
+<h1 align="center">Mobile Flashcards (React Native)</h1>
 
 A React Native app for iOS and Android that allows users to create decks, add cards and quiz themselves.
 
@@ -20,7 +20,7 @@ Mobile Flashcards is the third of three projects required for [Udacity's React N
 Clone the repository, change directories, and use npm or yarn to install the dependencies.
 
 ```bash
-$ git clone https://github.com/cangir/mobile-flashcards.git
+$ git clone https://github.com/jkmagnussen/mobile-flashcards.git
 $ cd mobile-flashcards
 $ yarn
 ```
@@ -58,8 +58,8 @@ This will open Expo Developer Tools in the browser. You can then do one of the f
 
 ## Contribution
 
-If you liked this repository and want to contribute, please read our [Contribution Guideline](https://github.com/cangir/mobile-flashcards/blob/master/CONTRIBUTION.md).
+If you liked this repository and want to contribute, please read our [Contribution Guideline](https://github.com/jkmagnussen/mobile-flashcards/blob/master/CONTRIBUTION.md).
 
 ## License
 
-Licensed under [MIT](https://github.com/cangir/mobile-flashcards/blob/master/LICENSE) License.
+Licensed under [MIT](https://github.com/jkmagnussen/mobile-flashcards/blob/master/LICENSE) License.

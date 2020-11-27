@@ -9,7 +9,7 @@ export default function Home({navigation})
 
   return (
     <View>
-      <Button title='text' onPress={() => navigation.navigate('Deck')}/>
+      <Button title='Deck' onPress={() => navigation.navigate('Deck')}/>
     </View>
 
   );
