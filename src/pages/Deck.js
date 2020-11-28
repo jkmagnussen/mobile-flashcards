@@ -1,50 +1,43 @@
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import { StyleSheet, Text, Button, View } from 'react-native';
+import { connect } from 'react-redux'
+import { bindActionCreators, compose } from 'redux';
+
+import * as actions from '../store/actions/decks'
 
 
-// Add a handle delete dek through from actions 
+// Add a handle delete deck through from actions 
+
+const Deck = props => {
+  const { handleGetAllDecks, decks } = props;
+  useEffect(() => { props.handleGetAllDecks() }, [])
+
+  console.log(decks)
+  
 
 
-export default function Deck(props)
-{
   return (
-    <View>
-      <View style={styles.container}>
-            <Text style={styles.deckTitle}>{deck.title}</Text>
-            <Paragraph style={styles.deckCardCount}>
-              {deck.questions.length} cards
-            </Paragraph>
-            <Button
-              mode="contained"
-              disabled={deck.questions.length > 0 ? false : true}
-              onPress={() => this.onStartQuizPress(deck.id)}
-            >
-              Start Quiz
-            </Button>
+    <View style={styles.container}>
+            <Text> //decks question length </Text>
+            <Button title='Start Quiz' />
 
-            <Button
-              mode="outlined"
-              onPress={() => this.onAddCardPress(deck.id)}
-            >
-              Add New Card
-            </Button>
+            <Button title='Add new Card' />
 
-            <Button
-              style={styles.buttonDeleteDeck}
-              labelStyle={styles.buttonDeleteDeckLabel}
-              mode="text"
-              onPress={() => this.onDeleteDeckPress(deck.id)}
-            >
-              Delete Deck
-            </Button>
-          </View>
+            <Button title='Delete Deck' />
     </View>
   );
 }
 
+const mapStateToProps = state => state
+
+const mapDispatchToProps = dispatch => bindActionCreators({ ...actions }, dispatch)
+
+export default compose(connect(mapStateToProps, mapDispatchToProps))(Deck)
+
 const styles = StyleSheet.create({
-  container: {
+        container: {
+        color: 'red',
   
   },
 });
