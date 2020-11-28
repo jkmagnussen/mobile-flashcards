@@ -6,16 +6,11 @@ import { bindActionCreators, compose } from 'redux';
 
 import * as actions from '../store/actions/decks'
 
-function Home({navigation})
-{
-  
-
+function Home({navigation}){
   return (
     <View>
       <Button title='Deck' onPress={() => navigation.navigate('Deck')} />
-
     </View>
-
   );
 }
 
