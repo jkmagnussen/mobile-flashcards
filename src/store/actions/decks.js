@@ -11,6 +11,14 @@ export const ADD_CARD_TO_DECK = "ADD_CARD_TO_DECK";
 export const DELETE_DECK = "DELETE_DECK";
 export const RESET_NEW_DECK_ID = "RESET_NEW_DECK_ID";
 export const SELECT_DECK = "SELECT_DECK";
+export const SELECT_QUESTION = "SELECT_QUESTION";
+
+export function selectQuestion(id) {
+  return {
+    type: SELECT_QUESTION,
+    id,
+  };
+}
 
 export function handleGetAllDecks() {
   return dispatch => {

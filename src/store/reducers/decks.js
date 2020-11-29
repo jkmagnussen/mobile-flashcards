@@ -17,10 +17,7 @@ export default function decks(state = [], action) {
     
     case ADD_DECK:
       const { deck } = action;
-      return {
-        ...state,
-        [deck.id]: deck
-      };
+      return [...state, deck]
     case ADD_CARD_TO_DECK:
       const { deckId, card } = action;
       const newDeck = state.filter(deck => deck.id === deckId)[0]

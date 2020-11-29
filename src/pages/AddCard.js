@@ -1,10 +1,10 @@
 
 import React, {useEffect, useState} from 'react';
-import { StyleSheet, Text, Button, View, TextInput  } from 'react-native';
+import { StyleSheet,  View, TextInput  } from 'react-native';
 import { connect } from 'react-redux'
 import { bindActionCreators, compose } from 'redux';
 import * as actions from '../store/actions/decks'
-
+import { Container, Header, Content, Button, Text, Card, Icon, CardItem} from 'native-base';
 
 
 const AddCard = ({ handleAddCardToDeck, selectedDeck, navigation })=> {
@@ -17,12 +17,14 @@ const AddCard = ({ handleAddCardToDeck, selectedDeck, navigation })=> {
     }
   
   return (
-      <View style={styles.container}>
-          <TextInput title='What is the title of your card?' onChangeText={text => onChangeQuestion(text)}
+    <View style={styles.container}>
+          <TextInput style={styles.input} title='What is the title of your card?' onChangeText={text => onChangeQuestion(text)}
               value={question} />
-          <TextInput title='What is the answerof your card?' onChangeText={text => onChangeAnswer(text)}
+          <TextInput style={styles.input} title='What is the answerof your card?' onChangeText={text => onChangeAnswer(text)}
       value={answer}/>
-          <Button title='Add New Card' onPress={handleAddCard} />
+          <Button block light style={styles.buttons} onPress={handleAddCard} >
+          <Text style={styles.titles} >Add New Card</Text>
+          </Button>
     </View>
   );
 }
@@ -35,7 +37,31 @@ export default compose(connect(mapStateToProps, mapDispatchToProps))(AddCard)
 
 const styles = StyleSheet.create({
         container: {
-        color: 'red',
+        marginTop: 140,
   
-  },
+    },
+          buttons: {
+    margin: 15,
+    fontSize: 92,
+    height: 100,
+    fontWeight: '600',
+    textAlign: 'center',
+    },
+            titles: {
+    fontWeight: '600',
+    fontSize: 28,
+                margin: 10,
+    color: 'rgb(64,64,64)'
+    },
+    input: {
+        alignContent: 'center',
+        fontSize: 28,
+        textAlign: 'center',
+        borderBottomColor: 'rgb(64,64,64)',
+    borderBottomWidth: 1.5,
+        marginBottom: 30,
+    color: 'rgb(64,64,64)'
+        
+            }
 });
+
