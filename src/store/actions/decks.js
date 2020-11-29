@@ -10,6 +10,7 @@ export const ADD_DECK = "ADD_DECK";
 export const ADD_CARD_TO_DECK = "ADD_CARD_TO_DECK";
 export const DELETE_DECK = "DELETE_DECK";
 export const RESET_NEW_DECK_ID = "RESET_NEW_DECK_ID";
+export const SELECT_DECK = "SELECT_DECK";
 
 export function handleGetAllDecks() {
   return dispatch => {
@@ -75,5 +76,12 @@ export function deleteDeck(deckId) {
 export function resetNewDeckId() {
   return {
     type: RESET_NEW_DECK_ID
+  };
+}
+
+export function selectDeck(id) {
+  return {
+    type: SELECT_DECK,
+    id,
   };
 }

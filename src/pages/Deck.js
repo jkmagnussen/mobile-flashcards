@@ -3,27 +3,32 @@ import React, {useEffect} from 'react';
 import { StyleSheet, Text, Button, View,  SectionList } from 'react-native';
 import { connect } from 'react-redux'
 import { bindActionCreators, compose } from 'redux';
-
+import { removeDeck } from '../utils/api';
 import * as actions from '../store/actions/decks'
 
 // Add a handle delete deck through from actions 
 
 const Deck = props => {
-  const { handleGetAllDecks, decks } = props;
+  const { handleGetAllDecks, decks, selectedDeck, deleteDeck, navigation, selectDeck } = props;
+  const deck = decks.filter(deck => deck.id === selectedDeck)[0]
   useEffect(() => { handleGetAllDecks() }, [])
 
-  console.log(decks)
+  const handleDeleteDeck = () => {
+    deleteDeck(selectedDeck)
+    removeDeck(selectedDeck)
+    selectDeck('')
+    navigation.navigate('Home')
+  } 
+  console.log(deck)
+  if (deck === undefined) return null;
   
   return (
     <View style={styles.container}>
-
-      {Object.keys(decks).map(info => {
-        < SectionList>{decks.title}</ SectionList>
-      })}
-            <Text> //decks question length </Text>
+      <Text>{deck.title}</Text>
+        <Text>{deck.questions.length} cards</Text>
             <Button title='Start Quiz' />
-            <Button title='Add new Card' />
-            <Button title='Delete Deck' />
+      <Button title='Add new Card' onPress={() => navigation.navigate('AddCard')}/>
+      <Button title='Delete Deck' onPress={handleDeleteDeck}/>
     </View>
   );
 }

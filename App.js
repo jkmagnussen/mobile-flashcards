@@ -10,6 +10,7 @@ import { Provider } from 'react-redux';
 
 import Deck from './src/pages/Deck'
 import Home from './src/pages/Home'
+import AddCard from './src/pages/AddCard'
 
 const Stack = createStackNavigator()
 
@@ -22,7 +23,8 @@ export default function App()
     <NavigationContainer>
       <Stack.Navigator style={styles.container}>
             <Stack.Screen name="Home" component={Home} />
-            <Stack.Screen name="Deck" component={Deck} />
+          <Stack.Screen name="Deck" component={Deck} />
+          <Stack.Screen name="AddCard" component={AddCard} />
       </Stack.Navigator>
       </NavigationContainer>
       </Provider>

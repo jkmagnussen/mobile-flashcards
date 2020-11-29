@@ -111,10 +111,10 @@ function initialData() {
 export async function getDecks() {
   try {
     const results = await AsyncStorage.getItem(FLASHCARDS_STORAGE_KEY);
-    if (results) {
-      const data = JSON.parse(results);
-      return data;
-    } else {
+    if (results && results !== '{}'){
+       const data = JSON.parse(results);
+     return data;
+     } else {
       await AsyncStorage.setItem(
         FLASHCARDS_STORAGE_KEY,
         JSON.stringify(initialData())
