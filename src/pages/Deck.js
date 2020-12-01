@@ -1,13 +1,11 @@
 
 import React, {useEffect} from 'react';
-import { StyleSheet,  View,  SectionList } from 'react-native';
+import { StyleSheet,  View } from 'react-native';
 import { connect } from 'react-redux'
 import { bindActionCreators, compose } from 'redux';
 import { removeDeck } from '../utils/api';
 import * as actions from '../store/actions/decks'
-import { Container, Header, Content, Button, Text, Card } from 'native-base';
-
-// Add a handle delete deck through from actions 
+import { Button, Text, Card } from 'native-base';
 
 const Deck = props => {
   const { handleGetAllDecks, decks, selectedDeck, deleteDeck, navigation, selectDeck } = props;
@@ -48,11 +46,8 @@ const mapDispatchToProps = dispatch => bindActionCreators({ ...actions }, dispat
 export default compose(connect(mapStateToProps, mapDispatchToProps))(Deck)
 
 const styles = StyleSheet.create({
-        container: {
-    
-
-          height: '90%'
-  
+  container: {
+    height: '90%'
   },
   header: {
     fontSize: 42,

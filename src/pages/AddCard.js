@@ -4,7 +4,7 @@ import { StyleSheet,  View, TextInput  } from 'react-native';
 import { connect } from 'react-redux'
 import { bindActionCreators, compose } from 'redux';
 import * as actions from '../store/actions/decks'
-import { Container, Header, Content, Button, Text, Card, Icon, CardItem} from 'native-base';
+import {  Button, Text, Card } from 'native-base';
 
 
 const AddCard = ({ handleAddCardToDeck, selectedDeck, navigation })=> {

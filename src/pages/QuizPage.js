@@ -4,8 +4,7 @@ import { StyleSheet, View } from 'react-native';
 import { connect } from 'react-redux'
 import { bindActionCreators, compose } from 'redux';
 import * as actions from '../store/actions/decks'
-import { Container, Header, Content, Button, Text, Card, Icon, CardItem} from 'native-base';
-import { preventAutoHide } from 'expo-splash-screen';
+import { Button, Text, Card, Icon, CardItem} from 'native-base';
 
 function QuizPage(props) {
   const { navigation, selectedDeck, decks } = props

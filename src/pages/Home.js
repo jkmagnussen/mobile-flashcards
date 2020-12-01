@@ -4,7 +4,7 @@ import { StyleSheet, View , ScrollView, SafeAreaView} from 'react-native';
 import { connect } from 'react-redux'
 import { bindActionCreators, compose } from 'redux';
 import * as actions from '../store/actions/decks'
-import { Container, Header, Content, Button, Text, CardItem } from 'native-base';
+import {  Button, Text } from 'native-base';
 
 
 
