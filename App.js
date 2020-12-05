@@ -21,7 +21,7 @@ import { AppLoading } from 'expo'
 
 const Stack = createStackNavigator()
 
-// comment
+// lazy load
 export default function App(){
  useEffect(() => {
     const loadFont = async()=>{
