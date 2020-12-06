@@ -3,6 +3,8 @@ import { generateUID } from "./helper";
 
 const FLASHCARDS_STORAGE_KEY = "flashcards_data";
 
+// impliment php and MySQL here
+
 function initialData() {
   return {
     "632mgp7hm68vzvg2amz1hq": {
